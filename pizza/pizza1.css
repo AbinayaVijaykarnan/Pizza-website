@@ -1,0 +1,364 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+                            /*outer-container*/
+
+.outer-container{      /*important*/
+    display: grid;
+     grid-template-columns:25% 25% 25% 25%;
+     grid-template-areas:10% 2% 20% 20% 15% 30% 3%;
+  /* grid-template-rows: 400px 150px 600px 600px 450px 900px 100px; */
+    grid-template-areas:
+     'nav-bar cover cover cover'
+     'nav-bar welcome welcome welcome'
+     'nav-bar aboutus aboutus aboutus'
+     'nav-bar services services services'
+     'nav-bar portfolio portfolio portfolio'
+     'nav-bar contact contact contact'
+     'nav-bar footer footer footer';
+}
+                        /*nav-bar i.e Here it is Side-bar */
+
+.nav-bar{
+    background-color: rgb(36, 35, 35);
+    grid-area:nav-bar; /*this should be used in grid-template-areas..as done above*/
+}
+.nav-bar img{
+    width:100%;
+    padding:30px;
+    margin:30px 0;
+}
+.links a{
+    background-color: rgba(54, 53, 54, 0.795);
+    color:rgb(122, 121, 121);
+    text-decoration: none;
+    text-align:center;
+    display:block;    /*important*/
+    padding:10px;
+    margin:2px 0;
+}
+.links a:hover{
+    color:rgb(255, 255, 255);
+    background-color: rgb(85, 83, 85);
+    font-weight: bolder;
+}
+
+                            /*cover*/
+
+.cover{
+    background-color: blueviolet;
+    grid-area:cover;
+    background-image:url("images/pizza1.jpg");
+    background-size:cover;
+}
+.cover:hover{
+    opacity:0.9;
+}
+.cover-content{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding:10%;
+}
+.cover-content h1, .cover-content p{
+    color:rgb(255, 255, 255);
+    font-style: italic;
+    width:100%;
+    text-align: center;
+}
+.cover-content button{
+    color:rgb(255, 255, 255);
+    background-color:rgb(0, 119, 255);
+    padding:10px;
+    margin:10px 0;
+}
+                                 /*welcome*/
+
+.welcome{
+    /*background-color: chartreuse;*/
+    grid-area:welcome;
+    text-align:center;
+    padding-bottom:20px;
+    margin:50px;
+}
+.welcome h2{
+    color:rgba(0, 0, 255, 0.925);
+}
+                            /*aboutus*/
+
+.aboutus{
+    grid-area:aboutus;
+    border-top:5px solid rgb(233, 147, 18);
+    margin:0 50px;
+
+    /*Trying Nested-Grid concept <-It Won't work:
+    display:grid;
+    grid-template-columns:33.333333% 33.333333% 33.333333%;
+    grid-template-rows:75px;
+    grid-gap:5px;
+    grid-template-areas:
+    'about1 about2 about3'
+    'about4 about5 about6'; */
+}
+.aboutus h2,.services h2,.portfolio h2,.contact h2{
+    background-color:rgba(233, 147, 18, 0.781); 
+    text-align:center;
+    width:20%;
+    padding:10px;
+}
+.about1,.about2,.about3,.service1,.service2,.service3,.portfolio1,.portfolio2,.portfolio3{
+    width:30%;
+    float:left;
+    text-align:center;
+    margin-right:30px;
+}
+.about1 img,.about2 img,.about3 img,.portfolio1 img,.portfolio2 img,.portfolio3 img{
+    width:100%;
+}
+.about1 h3,.about2 h3,.about3 h3,.about1 h4,.about2 h4,.about3 h4,.service1 p,.service2 p,.service3 p{
+    padding-top:10px;
+}
+.about4,.service4{
+    width:60%;
+    float:left;
+    padding:10px;
+    margin:15px 0;
+}
+.about4 h3,.service4 h3{
+    color:rgb(220, 20, 60);
+}
+.about4 p,.service1 p,.service2 p,.service3 p,.service4 p{
+    color:rgb(77, 75, 75);
+    padding:10px 0;
+}
+.about5,.service5{
+    width:25%;
+    float:right;
+    padding:20px 0;
+    margin:15px 50px 15px 0;
+}
+.about5 img,.service5 img{
+    width:100%;
+}
+                              /*services*/
+
+.services{
+    grid-area:services;
+    border-top:5px solid rgb(228, 15, 228);
+    margin:0 50px;
+    /* background-color: cyan;*/
+
+    /*.services h2 and .service1,.service2,.servive3 and .service4, .service5 properties has been changed above*/
+}
+.service1:hover,.service2:hover,.service3:hover{
+    background-color: rgba(255, 68, 0, 0.959);
+}
+.services h2{
+    background-color:rgba(228, 15, 228, 0.781);
+}
+.service1 h3,.service2 h3,.service3 h3{
+    font-size:1.2rem;
+    padding-top:10px;
+}
+                             /*portfolio-Customers Review*/
+
+.portfolio{
+    grid-area:portfolio;
+    border-top:5px solid rgb(6, 224, 6);
+    margin:0 50px;
+    /*.portfolio1,.portfolio2,.portfolio3 properties is changed above */
+}
+.portfolio1,.portfolio2,.portfolio3{
+    margin:15px 30px 15px 0;
+}
+.portfolio h2{
+    background-color:rgba(25, 207, 25,0.781);
+    width:35%;
+    /* refer .about there .portfolio h2 property has been changed */
+}
+.portfolio1 p,.portfolio2 p,.portfolio3 p{
+    color:rgb(77, 75, 75);
+    text-align:justify;
+    line-height:1.5rem;
+    padding:15px;
+}
+.portfolio span{
+    font-weight: bolder;
+}
+.portfolio4 button{
+    background-color: rgba(0, 0, 255, 0.644);
+    font-weight: bolder;
+    width:15%;
+    padding:10px;
+    margin:0 40%;
+}
+                             /*contact*/
+
+.contact{
+    grid-area:contact;
+    border-top:5px solid rgb(219, 60, 86);
+    margin:10px 50px;
+    /* .contact h2 property has been changed above*/
+}
+.contact h2{
+    background-color:rgba(219, 60, 87, 0.781);
+    margin-bottom:15px;
+}
+.name,.email,.subject{
+    width:33%;
+    float: left;
+    margin:15px 0;
+}
+.name input,.email input,.subject input,.message textarea{
+    width:80%;
+    padding:10px;
+    margin:10px 0;
+}
+.message textarea{
+    width:100%;
+}
+.submit input{
+    background-color: rgb(219, 60, 86);
+    color:rgb(255, 255, 255);
+    padding:10px;
+}
+                          /*footer*/
+
+.footer{
+    background-color: rgba(36, 35, 35, 0.918);
+    grid-area:footer;
+}
+.icons{
+    width:15%;
+    display:flex;
+    justify-content:space-between; 
+    margin:20px auto;
+}
+.fab{
+    color:rgba(255, 255, 255, 0.938);
+    float:left;
+    padding:10px;
+}
+.footer p{
+    color:rgb(156, 153, 153);
+    padding:10px;
+}
+
+           /*responsive template - XL screens i.e 1200px*/
+
+@media only screen and (max-width:1200px){
+    .aboutus h2,.services h2,.portfolio h2,.contact h2{
+        width:40%;
+    }
+    .about1,.about2,.about3,.service1,.service2,.service3,.portfolio1,.portfolio2,.portfolio3{
+        width:25%;
+        margin:5px 40px 0 20px;
+    }
+    .contact iframe{
+        width:90%;
+        padding:5px;
+    }
+}
+         /*responsive template - L screens i.e 992px*/
+
+@media only screen and (max-width:992px){
+    .about1,.about2,.about3,.service1,.service2,.service3,.portfolio1,.portfolio2,.portfolio3{
+        margin:5px 20px 0 20px;
+    }
+}
+         /*responsive template - md screens i.e 768px*/
+
+ @media only screen and (max-width:768px){
+    .about1,.about2,.about3,.service1,.service2,.service3,.portfolio1,.portfolio2,.portfolio3{
+        width:100%;
+        padding-bottom:10px;
+        margin-left:0;
+    }
+    .about4,.service4,.about5,.service5{
+        width:100%;
+    }
+    .about5,.service5{
+        float:none; /*important*/
+    }
+    .about5 img,.service5 img{
+        height:200px;
+    }
+    .portfolio{
+        margin:10px 50px;
+        padding-bottom:10px;
+    }
+    .portfolio1 p,.portfolio2 p,.portfolio3 p{
+        text-align:left;
+        font-size:0.8rem;
+        line-height:1.2rem;
+        padding:0;
+    }
+    .portfolio4 button{
+        width:20%;
+        padding:5px;
+    }
+    .footer{
+        text-align:center;
+        padding:10px;
+    }
+    .icons{
+        width:40%; /*important*/
+    }
+}
+        /*responsive template - sm screens i.e 576px*/
+
+@media only screen and (max-width:576px){
+    .outer-container{      
+        display:grid;
+        grid-template-columns:100%; /*important- in responsiveness we use template-column:100%*/
+       /*grid-template-rows: 400px 150px 600px 600px 450px 900px 100px;<- Dont use px & grid-template-rows no need.In responsiveness so much difficulties*/
+        grid-template-areas:
+         'nav-bar'
+         'cover'
+         'welcome'
+         'aboutus'
+         'services'
+         'portfolio'
+         'contact'
+         'footer';
+         overflow:hidden; /*most important- without this u get empty space overflow*/ 
+    }
+    .nav-bar img{
+        width:90%;
+        padding:50px;
+        margin:0 auto;
+        display:flex;
+        align-items:center;
+    }
+    .links a{
+        margin:15px 0;
+    }
+    .welcome p{
+        padding:10px;
+    }
+}
+     /*responsive template - xs screens i.e < 576px*/
+
+@media only screen and (max-width:420px)and (min-width:200px){
+    .welcome{
+        padding-bottom:10px;
+        margin:20px;
+    }
+    .aboutus,.services,.portfolio{
+        margin:0 20px;    /*important*/
+    }
+    .contact{
+        margin:10px 20px; /*important*/
+    }
+    .aboutus h2,.services h2,.portfolio h2,.contact h2{
+        width:80%;
+        padding:10px;
+    }
+    .portfolio1,.portfolio2,.portfolio3{
+        width:100%;
+        float:none;
+    }
+    .contact iframe{
+        width:100%;
+    }
+}
